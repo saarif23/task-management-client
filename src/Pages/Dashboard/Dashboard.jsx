@@ -51,7 +51,7 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/donationCampaigns"
+                                    to="/dashboard/previousTask"
                                     className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
                                     }

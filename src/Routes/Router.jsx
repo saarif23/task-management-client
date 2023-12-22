@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import TodoTask from "../Pages/Dashboard/TodoTask";
 import Blogs from "../Pages/Blogs";
 import Pricing from "../Pages/Pricing";
+import PreviousTask from "../Pages/Dashboard/PreviousTask";
 
 
 const Router = createBrowserRouter([
@@ -23,6 +24,10 @@ const Router = createBrowserRouter([
             {
                 path: "createTask",
                 element: <PrivateRoute><CreateTask /></PrivateRoute>
+            },
+            {
+                path: "previousTask",
+                element: <PrivateRoute><PreviousTask /></PrivateRoute>
             },
             {
                 path: "todoTask",

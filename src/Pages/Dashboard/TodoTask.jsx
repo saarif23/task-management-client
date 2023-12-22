@@ -10,7 +10,7 @@ const TodoTask = () => {
     const [onGoingTask, setOnGoingTask] = useState([]);
 
     const { user } = useAuth();
-    const { data: todoTasks = [], isPending, refetch } = useQuery({
+    const { data: todoTasks = [],  } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/tasks?email=${user?.email}`)
