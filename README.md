@@ -1,8 +1,41 @@
-# React + Vite
+# Task Management Platfrom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live  Link 
+https://clever-fenglisu-a864e4.netlify.app
 
-Currently, two official plugins are available:
+## Server Side Code Link 
+https://github.com/saarif23/task-management-server
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+  ## Some Special Features of my Website
+  - This is Task Management Website 
+  - A Valid User can create new Task
+  - Task Drag and Drop in Todo task to Ongoing Task
+
+
+
+  # Used packages and technology
+
+  ## Used packages
+  - Tailwind CSS
+  - Axios
+  - Tanstack query
+  - Firebase 
+  - React Hook From 
+  - React Icons
+  - React Hot Toast
+
+
+
+  # Used Technology
+  ## Front-end
+  - HTML
+  - Tailwind CSS
+  - Java Script
+  - React Js
+
+  ## Back-end
+  - Express Js
+  - Mongoose
+  - JWT
+   
