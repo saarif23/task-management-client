@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className="bg-emerald-800 pt-10">
             <Container>
-                <div className="flex justify-evenly items-center text-center">
+                <div className="flex flex-col md:flex-row gap-10 md:gap-5 justify-evenly items-center text-center">
                     <div>
                         <p className='text-white font-semibold '>Arif Task</p>
                         <div className='text-black font-semibold'>
@@ -64,7 +64,7 @@ const Footer = () => {
                         <p>Flex Task Lab</p>
                     </div>
                     <p>© 2023 FlexTaskLab</p>
-                    <div className="flex justify-center items-center gap-5">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-5">
                     <div className='flex my-5 gap-5 justify-center text-xs '>
                         <Link>Compliance</Link>
                         <Link>Terms of Service</Link>
