@@ -66,31 +66,9 @@ const Dashboard = () => {
                                         isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
                                     }
                                 >
-                                    Todo Task
+                                    Task List
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink
-                                    to="/dashboard/todoTask"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
-                                    }
-                                >
-                                    Ongoing Task
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/dashboard/todoTask"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
-                                    }
-                                >
-                                    Complied Task
-                                </NavLink>
-                            </li>
-
-
                         </ul>
                     </div>
                     <div
@@ -117,20 +95,9 @@ const Dashboard = () => {
                                     to='/todoTask'
                                     className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
                                 >
-                                   Todo Task List
+                                    Task List
                                 </Link>
-                                <Link
-                                    to='/todoTask'
-                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
-                                >
-                                   Ongoing Task List
-                                </Link>
-                                <Link
-                                    to='/todoTask'
-                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
-                                >
-                                   Complied Task List
-                                </Link>
+
 
                                 <Link
                                     onClick={handleLogout}

@@ -1,37 +1,67 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
+import Task from "../../Components/Task";
+import { useState } from "react";
+import { useDrop } from "react-dnd";
 
 const TodoTask = () => {
     const axiosSecure = useAxiosSecure();
+    const [onGoingTask, setOnGoingTask] = useState([]);
+
     const { user } = useAuth();
     const { data: todoTasks = [], isPending, refetch } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/tasks?email=${user?.email}`)
-            console.log(res);
+
             return res.data
         }
     })
-    return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
-            {
-                todoTasks.map((task, index) => <div key={task._id} className="">
 
-                    <div className="text-white shadow-xl shadow-slate-950 p-5 h-[420px]">
-                        <div className="">
-                            <p className="text-center p-3 shadow-lg shadow-slate-600 mb-5">Task : {index+1}</p>
-                            <h3 className="text-2xl font-bold text-orange-300 font  pb-5">{task.name}</h3>
-                            <div className="flex flex-col justify-between ">
-                                <p>Priority : {task.priority}</p>
-                                <p>Deadline : {task.deadline}</p>
-                            </div>
-                            <p className="pt-5 text-justify ">Task Description : {task.task_des}</p>
-                        </div>
-                    </div>
-                </div>)
-            }
-        </div>
+    const [{ isOver }, drop] = useDrop(() => ({
+        accept: "object",
+        drop: (item) => addToTask(item.id),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }))
+
+    const addToTask = (id) => {
+        const onGoingTaskList = todoTasks.filter(task => task._id === id)
+        console.log(onGoingTaskList);
+        setOnGoingTask(onGoingTaskList)
+        // setOnGoingTask(onGoingTask => [...onGoingTask, onGoingTaskList[0]])
+        // console.log(onGoingTask);
+
+    };
+
+
+    return (
+        <>
+            <div>
+                <div className="text-center text-3xl font-bold text-orange-500 pt-5">
+                    <p>Todo Task List</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
+                    {
+                        todoTasks.map((task, index) => <Task key={task._id} task={task} index={index}> </Task>)
+                    }
+                </div>
+            </div>
+            <div className="">
+                <div className="text-center text-3xl font-bold text-orange-500 pt-5">
+                    <p>On Going Task List</p>
+                </div>
+                <div ref={drop} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 ">
+                    {
+                        onGoingTask.map((task, index) => <Task key={task?._id} task={task} index={index}> </Task>)
+                    }
+                </div>
+            </div>
+
+
+        </>
     );
 };
 
