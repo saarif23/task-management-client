@@ -1,31 +1,37 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAuth from "../../Hooks/useAuth";
+
 const TodoTask = () => {
+    const axiosSecure = useAxiosSecure();
+    const { user } = useAuth();
+    const { data: todoTasks = [], isPending, refetch } = useQuery({
+        queryKey: ['tasks'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/tasks?email=${user?.email}`)
+            console.log(res);
+            return res.data
+        }
+    })
     return (
-        <table className="table-auto text-white w-full ">
-  <thead>
-    <tr className="">
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-      <td>Malcolm Lockyer</td>
-      <td>1961</td>
-    </tr>
-    <tr>
-      <td>Witchy Woman</td>
-      <td>The Eagles</td>
-      <td>1972</td>
-    </tr>
-    <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
-      <td>1975</td>
-    </tr>
-  </tbody>
-</table>
+        <div className="grid grid-cols-3 gap-10 p-5">
+            {
+                todoTasks.map((task, index) => <div key={task._id} className="">
+
+                    <div className="text-white shadow-xl shadow-slate-950 p-5">
+                        <div className="">
+                            <p className="text-center p-3 shadow-lg shadow-slate-600 mb-5">Task : {index+1}</p>
+                            <h3 className="text-2xl font-boldf  pb-5">{task.name}</h3>
+                            <div className="flex flex-col justify-between ">
+                                <p>Priority : {task.priority}</p>
+                                <p>Deadline : {task.deadline}</p>
+                            </div>
+                            <p className="pt-5 text-justify ">Task Description : {task.task_des}</p>
+                        </div>
+                    </div>
+                </div>)
+            }
+        </div>
     );
 };
 
