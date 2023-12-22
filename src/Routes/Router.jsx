@@ -6,12 +6,15 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import CreateTask from "../Pages/Dashboard/CreateTask";
 import PrivateRoute from "./PrivateRoute";
 import TodoTask from "../Pages/Dashboard/TodoTask";
+import Blogs from "../Pages/Blogs";
+import Pricing from "../Pages/Pricing";
 
 
 const Router = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout />
+        element: <MainLayout />,
+
     },
     {
         path: "/dashboard",
@@ -19,11 +22,11 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "createTask",
-                element: <PrivateRoute><CreateTask/></PrivateRoute>
+                element: <PrivateRoute><CreateTask /></PrivateRoute>
             },
             {
                 path: "todoTask",
-                element: <PrivateRoute><TodoTask/></PrivateRoute>
+                element: <PrivateRoute><TodoTask /></PrivateRoute>
             }
         ]
     },
@@ -34,6 +37,14 @@ const Router = createBrowserRouter([
     {
         path: '/signup',
         element: <Signup />
+    },
+    {
+        path: '/blogs',
+        element: <Blogs />
+    },
+    {
+        path: '/pricing',
+        element: <Pricing />
     }
 ])
 export default Router;

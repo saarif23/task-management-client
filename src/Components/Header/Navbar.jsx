@@ -16,7 +16,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-black font-semibold shadow shadow-gray-400 px-5 py-3" : "text-gray-200 font-medium"
+                                    isPending ? "pending" : isActive ? "text-orange-300 text-xl font-semibold" : "text-gray-200 font-medium"
                                 }
                             >
                                 Home
@@ -24,22 +24,22 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/petListing"
+                                to="/blogs"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-black font-semibold shadow shadow-gray-400 px-5 py-3" : "text-white font-medium"
+                                    isPending ? "pending" : isActive ? "text-orange-300 text-xl font-semibold" : "text-white font-medium"
                                 }
                             >
-                                Clicbale1
+                                Blogs
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
-                                to="/donationCampaigns"
+                                to="/pricing"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-black font-semibold shadow shadow-gray-400 px-5 py-3" : "text-gray-200 font-medium"
+                                    isPending ? "pending" : isActive ? "text-orange-300 text-xl font-semibold" : "text-gray-200 font-medium"
                                 }
                             >
-                                Clicbale2
+                                Pricing
                             </NavLink>
                         </li>
 

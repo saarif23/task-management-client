@@ -1,7 +1,5 @@
 
 import { RiMenu2Line, RiDashboard3Fill } from "react-icons/ri";
-
-
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -66,16 +64,16 @@ const MenuDropdown = () => {
                                 Home
                             </Link>
                             <Link
-                                to='/petListing'
+                                to="/blogs"
                                 className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
                             >
-                                Pet Listing
+                                Blogs
                             </Link>
                             <Link
-                                to='/donationCampaigns'
+                              to="/pricing"
                                 className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
                             >
-                                Donation Campaigns
+                                Pricing
                             </Link>
 
                             <Link
@@ -103,16 +101,16 @@ const MenuDropdown = () => {
                                 Home
                             </Link>
                             <Link
-                                to='/petListing'
+                                to='/blogs'
                                 className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
                             >
-                                Pet Listing
+                               Blogs
                             </Link>
                             <Link
-                                to='/donationCampaigns'
+                                to='/pricing'
                                 className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
                             >
-                                Donation Campaigns
+                                Pricing
                             </Link>
 
                             <Link

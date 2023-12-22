@@ -25,15 +25,15 @@ const Dashboard = () => {
                 <div className="flex justify-between text-white max-lg:pt-5  items-center gap-10 ">
                     <div className="flex items-center gap-3">
                         <img className="rounded-full w-10" src={user.photoURL} alt="userImage" />
-                        <p className="text-xl font-bold text-emerald-700">{user.displayName}</p>
+                        <p className="text-xl font-bold text-orange-300">{user.displayName}</p>
                     </div>
-                    <div className="shadow-md max-lg:hidden bg-slate-800 px-20 rounded-b-2xl py-4 ">
+                    <div className="shadow-md max-lg:hidden bg-slate-800 px-10 rounded-b-2xl py-4 ">
                         <ul className='hidden  lg:flex gap-5 '>
                             <li>
                                 <NavLink
                                     to="/"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-white font-semibold shadow  px-5 py-3" : "text-white font-medium"
+                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
                                     }
                                 >
                                     Home
@@ -43,7 +43,7 @@ const Dashboard = () => {
                                 <NavLink
                                     to="/dashboard/createTask"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-white font-semibold shadow  px-5 py-3" : "text-white font-medium"
+                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
                                     }
                                 >
                                     Create New Task
@@ -53,7 +53,7 @@ const Dashboard = () => {
                                 <NavLink
                                     to="/donationCampaigns"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-white font-semibold shadow  px-5 py-3" : "text-white font-medium"
+                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
                                     }
                                 >
                                     Privious Task
@@ -63,10 +63,30 @@ const Dashboard = () => {
                                 <NavLink
                                     to="/dashboard/todoTask"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-white font-semibold shadow  px-5 py-3" : "text-white font-medium"
+                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
                                     }
                                 >
-                                    Todo Task List
+                                    Todo Task
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/dashboard/todoTask"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
+                                    }
+                                >
+                                    Ongoing Task
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/dashboard/todoTask"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-orange-400 font-semibold shadow  px-5 py-3" : "text-white font-medium"
+                                    }
+                                >
+                                    Complied Task
                                 </NavLink>
                             </li>
 
@@ -79,31 +99,43 @@ const Dashboard = () => {
                         <RiMenu2Line size={28} />
                     </div>
                     {isOpen &&
-                        <div className='absolute rounded-xl z-10 shadow-md w-[40vw] md:w-[10vw] bg-black bg-blend-overlay bg-opacity-25 overflow-hidden right-0 top-12 text-sm text-white'>
+                        <div className='absolute rounded-xl z-10 shadow-md w-[40vw] md:w-[10vw] bg-black bg-blend-overlay bg-opacity-50 overflow-hidden right-0 top-12 text-sm text-white '>
                             <div className='flex flex-col text-white cursor-pointer'>
                                 <Link
                                     to='/'
-                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
+                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
                                 >
                                     Home
                                 </Link>
                                 <Link
                                     to='/dashboard/createTask'
-                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
+                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
                                 >
                                     Create New Task
                                 </Link>
                                 <Link
                                     to='/todoTask'
-                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
+                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
                                 >
                                    Todo Task List
+                                </Link>
+                                <Link
+                                    to='/todoTask'
+                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
+                                >
+                                   Ongoing Task List
+                                </Link>
+                                <Link
+                                    to='/todoTask'
+                                    className='block md:hidden px-4 py-3 hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
+                                >
+                                   Complied Task List
                                 </Link>
 
                                 <Link
                                     onClick={handleLogout}
                                     to='/logout'
-                                    className='px-4 py-3 hover:bg-neutral-100 hover:text-emerald-500 transition font-semibold'
+                                    className='px-4 py-3 md:hidden hover:bg-neutral-100 hover:text-orange-400 transition font-semibold'
                                 >
                                     Logout
                                 </Link>
